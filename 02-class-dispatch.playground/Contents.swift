@@ -24,3 +24,24 @@ class UniformDistribution: Distribution {
         return Double(Int.random(in: range))
     }
 }
+
+let d20 = UniformDistribution(range: 1...20)
+d20.sample(count: 10)
+
+class GeometryBase {
+    func area() -> Double {
+        fatalError("derived class must implement this")
+    }
+}
+
+extension GeometryBase {
+    @objc func perimeter() -> Double {
+        fatalError("derived class must implement this")
+    }
+}
+
+class DrawableBase: NSObject {
+    @objc func draw() {
+        fatalError("derive")
+    }
+}
